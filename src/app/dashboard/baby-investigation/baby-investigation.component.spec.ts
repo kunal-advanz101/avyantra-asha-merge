@@ -68,6 +68,14 @@ describe('BabyInvestigationComponent', () => {
     babyInvestForm = component.invetigationForm;
 
   });
+  var originalTimeout;
+beforeEach(function() {
+originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+});
+afterEach(function() {
+jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+});
 
   it('should create', () => {
     localStorage.setItem("login_hospital", JSON.stringify({ "username": "getwell", "email": "get@yahoo.com", "user_type": "Hospital", "id": 92, "hospital_name": "getwell", "hospital_branch_name": "getwell indore", "hospital_branch_id": 59 }));
